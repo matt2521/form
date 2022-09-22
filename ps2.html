@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<title>Zadanie zdalne</title>
+</head>
+<body>
+		<div id="Lewy">
+			<ul role="navigation">
+				<li><a href="ps.html">Różne kontrolki HTML</a></li>
+				<li><a href="ps2.html">Tabela Pracowników</a></li>
+				<li><a href="ps3.html">Tabela Faktur VAT</a></li>
+				<li><a href="ps4.php">Tabela Delegacji BD</a></li>
+				<li><a href="ps5.php">Dane Kontrahentów</a></li>
+			</ul>
+		</div>
+		<div id="Prawy">
+		    <table>
+				<caption>Pracownicy</caption>
+				<thead>
+					<tr class="a">
+						<th>Lp</th>
+				        <th>Imie</th>
+				        <th>Nazwisko</th>
+				        <th>Stanowisko</th>
+				        <th>Data urodzenia</th>
+				        <th>Ilosc dni urlopowych</th>
+				    </tr>
+				</thead>
+				<tbody>
+					<tr class="b">
+						<td>1</td>
+				        <td>Jan</td>
+				        <td>Kochanowski</td>
+				        <td>Kierowca</td>
+				        <td>1995-02-25</td>
+				        <td>15</td>
+				    </tr>
+					<tr class="a">
+						<td>2</td>
+				        <td>Henryk</td>
+				        <td>Sienkiewicz</td>
+				        <td>Sprzedawca</td>
+				        <td>1998-08-12</td>
+				        <td>14</td>
+				    </tr>
+					<tr class="b">
+						<td>3</td>
+				        <td>Eliza</td>
+				        <td>Orzeszkowa</td>
+				        <td>Księgowa</td>
+				        <td>1986-15-04</td>
+				        <td>10</td>
+				    </tr>
+					<tr class="a">
+						<td>4</td>
+				        <td>Wisława</td>
+				        <td>Szymborska</td>
+				        <td>Kucharka</td>
+				        <td>2001-06-02</td>
+				        <td>12</td>
+				    </tr>
+					<tr class="b">
+						<td>5</td>
+				        <td>Bolesław</td>
+				        <td>Prus</td>
+				        <td>Zegarmistrz</td>
+				        <td>1992-11-07</td>
+				        <td>8</td>
+				    </tr>
+				</tbody>
+		   </table>
+
+			<br/>
+			Kolor 1: <input type="color" name="" id="c1"><br/>
+			Kolor 2: <input type="color" name="" id="c2"><br/>
+			<input type="submit" name="submit" value="Ustaw kolor" onclick="colorChange()">
+	</div>
+
+	<script>
+		function colorChange() {
+			let color_1 = document.getElementById('c1').value;
+			let color_2 = document.getElementById('c2').value;
+
+			class_a = document.getElementsByClassName('a')
+			class_b = document.getElementsByClassName('b')
+
+			for (var i = 0; i < class_a.length; i++) {
+				class_a[i].style.backgroundColor = color_1
+			}
+
+			for (var i = 0; i < class_b.length; i++) {
+				class_b[i].style.backgroundColor = color_2
+			}
+
+		}
+	</script>
+</body>
+</html>

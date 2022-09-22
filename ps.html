@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<title>Zadanie zdalne</title>
+</head>
+<body>
+		<div id="Lewy">
+			<ul role="navigation">
+				<li><a href="ps.html">Różne kontrolki HTML</a></li>
+				<li><a href="ps2.html">Tabela Pracowników</a></li>
+				<li><a href="ps3.html">Tabela Faktur VAT</a></li>
+				<li><a href="ps4.php">Tabela Delegacji BD</a></li>
+				<li><a href="ps5.php">Dane Kontrahentów</a></li>
+			</ul>
+		</div>
+		<div id="Prawy">
+			<form method="POST", action="form.php">
+				<fieldset>
+					<legend>Dane kontrahenta</legend>
+					NIP: <input type="text" name="nip"></br>
+					REGON: <input type="number" name="regon"></br>
+					NAZWA: <input type="text" name="nazwa"></br>
+					DATA POWSTANIA: <input type="date" name="dp"></br>
+					ULICA: <input type="text" name="ulica"></br>
+					NUMER DOMU: <input type="text" name="nd"></br>
+					NUMER MIESZKANIA: <input type="text" name="nm"></br>
+					UWAGI: <textarea name="uwagi"></textarea></br/>
+				</fieldset>
+
+				<fieldset>
+					<legend>Kolory</legend>
+						<input type="radio" name="color" id="color_1" value="Zielony">
+						<label for="color_1">Zielony</label><br/>
+						
+						<input type="radio" name="color" id="color_2" value="Niebieski">
+						<label for="color_2">Niebieski</label><br/>
+						
+						<input type="radio" name="color" id="color_3" value="Szary">
+						<label for="color_3">Szary</label><br/>
+
+						<input type="radio" name="color" id="color_4" value="Turkusowy">
+						<label for="color_4">Turkusowy</label><br/>
+
+						<input type="radio" name="color" id="color_5" value="Granatowy">
+						<label for="color_5">Granatowy</label><br/>
+
+						<input type="radio" name="color" id="color_6" value="Czerwony">
+						<label for="color_6">Czerwony</label><br/>
+
+						<input type="radio" name="color" id="color_7" value="Biały">
+						<label for="color_7">Biały</label><br/>
+				</fieldset>
+
+				<fieldset>
+					<legend>VAT</legend>
+						<input type="radio" name="vat" id="vat_1" value="ZW">
+						<label for="vat_1">ZW</label><br/>
+						
+						<input type="radio" name="vat" id="vat_2" value="NP.">
+						<label for="vat_2">NP.</label><br/>
+
+						<input type="radio" name="vat" id="vat_3" value="0%">
+						<label for="vat_3">0%</label><br/>
+
+						<input type="radio" name="vat" id="vat_4" value="3%">
+						<label for="vat_4">3%</label><br/>
+
+						<input type="radio" name="vat" id="vat_5" value="8%">
+						<label for="vat_5">8%</label><br/>
+
+						<input type="radio" name="vat" id="vat_6" value="23%">
+						<label for="vat_6">23%</label><br/>
+				</fieldset>
+
+				<fieldset>
+					<legend>Elementy</legend>
+						<ol>
+							<li>1. Element</li>
+							<li>2. Element</li>
+							<li>3. Element</li>
+						</ol>
+				</fieldset>
+			</form>	
+	</div>
+
+</body>
+</html>

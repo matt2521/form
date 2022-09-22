@@ -1,0 +1,15 @@
+#Lewy {
+	width: 25%;
+	height: 100%;
+	float: left;
+}
+#Prawy {
+	width: 75%;
+	height: 100%;
+	overflow: hidden;
+}
+
+th, tr, td {
+	border:  1px solid black;
+}
+

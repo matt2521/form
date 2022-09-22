@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<title>Zadanie zdalne</title>
+</head>
+<body onload="add()">
+		<div id="Lewy">
+			<ul role="navigation">
+				<li><a href="ps.html">Różne kontrolki HTML</a></li>
+				<li><a href="ps2.html">Tabela Pracowników</a></li>
+				<li><a href="ps3.html">Tabela Faktur VAT</a></li>
+				<li><a href="ps4.php">Tabela Delegacji BD</a></li>
+				<li><a href="ps5.php">Dane Kontrahentów</a></li>
+			</ul>
+		</div>
+		<div id="Prawy">
+		    <table id = "tab">
+				<caption>Pracownicy</caption>
+				<thead>
+					<tr class="a">
+						<th>Lp</th>
+				        <th>Opis</th>
+				        <th>MPK</th>
+				        <th>Kwota netto</th>
+				        <th>Ilość</th>
+				        <th>VAT</th>
+				        <th>Kwota brutto</th>
+				        <th>Wartość netto</th>
+				        <th>Wartość brutto</th>
+				    </tr>
+				</thead>
+				<tbody>
+					<tr class="b">
+						<td>1</td>
+				        <td>Przykładowy opis 1</td>
+				        <td>MPK 1</td>
+				        <td>509</td>
+				        <td>3</td>
+				        <td>23%</td>
+				        <td></td>
+				        <td></td>
+				        <td></td>
+				    </tr>
+					<tr class="a">
+						<td>2</td>
+				        <td>Przykładowy opis 2</td>
+				        <td>MPK 2</td>
+				        <td>1008</td>
+				        <td>5</td>
+				        <td>3%</td>
+				        <td></td>
+				        <td></td>
+				        <td></td>
+				    </tr>
+					<tr class="b">
+						<td>3</td>
+				        <td>Przykładowy opis 3</td>
+				        <td>MPK 3</td>
+				        <td>900</td>
+				        <td>10</td>
+				        <td>8%</td>
+				        <td></td>
+				        <td></td>
+				        <td></td>
+				    </tr>
+					<tr class="a">
+						<td>4</td>
+				        <td>Przykładowy opis 4</td>
+				        <td>MPK 4</td>
+				        <td>1111</td>
+				        <td>22</td>
+				        <td>0%</td>
+				        <td></td>
+				        <td></td>
+				        <td></td>
+				    </tr>
+					<tr class="b">
+						<td>5</td>
+				        <td>Przykładowy opis 5</td>
+				        <td>MPK 5</td>
+				        <td>785</td>
+				        <td>23</td>
+				        <td>ZW</td>
+				        <td></td>
+				        <td></td>
+				        <td></td>
+				    </tr>
+				</tbody>
+		   </table>
+
+			<br/>
+
+			<input type="submit" name="submit" value="Powyżej 1000 Netto" onclick="color()">
+	</div>
+
+	<script>
+		function add() {
+			
+			tab = document.getElementById('tab')
+			for(var i = 1; i < tab.rows.length; i++){
+				x = tab.rows.item(i).cells.item(6)
+			
+				if(tab.rows.item(i).cells.item(5).innerHTML === '23%'){
+				brutto = tab.rows.item(i).cells.item(3).innerHTML * 1.23
+				x.innerHTML = brutto
+				}
+
+				else if(tab.rows.item(i).cells.item(5).innerHTML === '8%'){
+				brutto = tab.rows.item(i).cells.item(3).innerHTML * 1.08
+				x.innerHTML = brutto
+				}
+
+				else if(tab.rows.item(i).cells.item(5).innerHTML === '3%'){
+				brutto = tab.rows.item(i).cells.item(3).innerHTML * 1.03
+				x.innerHTML = brutto
+				}
+
+				else if(tab.rows.item(i).cells.item(5).innerHTML === 'ZW' || 'NP' || '0%'){
+				brutto = tab.rows.item(i).cells.item(3).innerHTML * 1
+				x.innerHTML = brutto
+				}
+
+			}
+
+			for(var i = 1; i < tab.rows.length; i++){
+				x = tab.rows.item(i).cells.item(7)
+			
+				brutto = tab.rows.item(i).cells.item(3).innerHTML * tab.rows.item(i).cells.item(4).innerHTML
+				x.innerHTML = brutto
+			}
+
+			for(var i = 1; i < tab.rows.length; i++){
+				x = tab.rows.item(i).cells.item(8)
+
+				if(tab.rows.item(i).cells.item(5).innerHTML === '23%'){
+				brutto = tab.rows.item(i).cells.item(7).innerHTML * 1.23
+				x.innerHTML = brutto
+				}
+
+				else if(tab.rows.item(i).cells.item(5).innerHTML === '8%'){
+				brutto = tab.rows.item(i).cells.item(7).innerHTML * 1.08
+				x.innerHTML = brutto
+				}
+
+				else if(tab.rows.item(i).cells.item(5).innerHTML === '3%'){
+				brutto = tab.rows.item(i).cells.item(7).innerHTML * 1.03
+				x.innerHTML = brutto
+				}
+
+				else if(tab.rows.item(i).cells.item(5).innerHTML === 'ZW' || 'NP' || '0%'){
+				brutto = tab.rows.item(i).cells.item(7).innerHTML * 1
+				x.innerHTML = brutto
+				}
+
+			}
+
+		}
+
+		function color(){
+			tab = document.getElementById('tab')
+			for(var i = 1; i < tab.rows.length; i++){
+				if(tab.rows.item(i).cells.item(3).innerHTML > 1000){
+					tab.rows.item(i).style.backgroundColor = '#7CFC00'
+				}
+
+			}			
+		}
+	</script>
+</body>
+</html>
